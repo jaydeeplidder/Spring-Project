@@ -1,0 +1,29 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'in.sts.springgradleproject'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	// https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper
+	implementation 'org.apache.tomcat:tomcat-jasper:9.0.58'
+	
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.6.3'
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
